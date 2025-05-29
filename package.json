@@ -1,0 +1,21 @@
+{
+  "name": "curso_playwright_js",
+  "version": "1.0.0",
+  "description": "Colocando em prática que eu aprendi com o curso: Automated Web Testing with JavaScript and Playwright - https://www.udemy.com/share/107SG83@LmtWFCv2oHgr3xM2WyE",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LennonGSilvas/CursoPlaywrightComJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LennonGSilvas/CursoPlaywrightComJS/issues"
+  },
+  "homepage": "https://github.com/LennonGSilvas/CursoPlaywrightComJS#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0"
+  }
+}
