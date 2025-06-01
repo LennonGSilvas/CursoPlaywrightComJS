@@ -1,5 +1,7 @@
-import { test, expect } from '@playwright/test'
+import { test} from '@playwright/test'
 import { PaginaDeProdutos } from '../page-objects/PaginaDeProdutos'
+import { Checkout } from '../page-objects/Checkout'
+import { Navegacao } from '../page-objects/Navegacao'
 
 test('PaginaDeProdutos', async ({ page }) => {
 
@@ -13,9 +15,14 @@ test('PaginaDeProdutos', async ({ page }) => {
     await paginaProdutos.adicionarProdutos(2)
 
     //Vai até a pagina do checkout
-    const acessaPaginaCheckout = page.getByRole('link', { name: 'Checkout' })
-    await acessaPaginaCheckout.waitFor()
-    await acessaPaginaCheckout.click()
-    await page.waitForURL("http://localhost:2221/basket")
+    const irAteCheckout = new Navegacao(page)
+    await irAteCheckout.vaiParaCheckout()
+
+    //Remove item com menor valor
+    const checkout = new Checkout(page)
+    await checkout.removeProdutoComMenorValor()
+    await checkout.vaiParaPaginaFinalizarVenda()
+
+
 
 })
